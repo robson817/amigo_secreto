@@ -4,20 +4,39 @@ function adicionar() {
     let amigo = document.getElementById('nome-amigo');
     let lista = document.getElementById('lista-amigos');
 
+    // Minha solução
+    // if (amigos.includes(amigo.value)) {
+    //     alert('Esse amigo já está incluído!');
+    // } else if (amigo.value == '') {
+    //     alert('Por favor, insira um amigo!');
+    // } else {
+    //     amigos.push(amigo.value);
+    //     if (lista.textContent == '') {
+    //         lista.textContent = amigo.value;
+    //     } else {
+    //         lista.textContent = lista.textContent + ', ' + amigo.value;
+    //     }
+    //     amigo.value = '';
+    // }
+
+    if (amigo.value == '') {
+        alert('Por favor, insira um amigo!');
+        return;
+    }
     if (amigos.includes(amigo.value)) {
         alert('Esse amigo já está incluído!');
-    } else if (amigo.value == '') {
-        alert('Por favor, insira um amigo!');
-    } else {
-        amigos.push(amigo.value);
-        if (lista.textContent == '') {
-            lista.textContent = amigo.value;
-        } else {
-            lista.textContent = lista.textContent + ', ' + amigo.value;
-        }
-        amigo.value = '';
+        return;
     }
+    
+    amigos.push(amigo.value);
+    if (lista.textContent == '') {
+        lista.textContent = amigo.value;
+    } else {
+        lista.textContent = lista.textContent + ', ' + amigo.value;
+    }
+    amigo.value = '';
 }
+
 
 
 function sortear() {
